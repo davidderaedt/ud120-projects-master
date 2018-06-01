@@ -36,10 +36,10 @@ More precisely:
 
 * Looking at the data. Although it may seem obvious, it's a critical step to carefully analyze the dataset at a macro level (e.g. how many entries we have) and micro level (printing random entries to say how it looks)
 * Feature selection, first based on intuition. Here I assumed a correlation between POI status and financial data + email communication with other POIs.
-* Data driven evaluation of my hypothesis, starting with using classifiers' feature_importances_ attribute
+* Data driven evaluation of my hypothesis, starting with using classifiers' feature_importances_ attribute. I tested all of them, and ended up ditching most to just keep four : *deferred_income*, *total_stock_value*, *expenses*, and my own *poi_mail_ratio* (more about this below)
 * Visualisation using *matplotlib*. Also, I tend to use *print* a lot.
-* Removal of obvious outliers. Here I took quite a conservative approach, strictly removing what seemed absolutely necessary (2 entries), as I did not want to remove potentially useful information.
-* At least considering data normalization, even if I eventually used a type of classifer which makes this unnecessary (Decision Tree).
+* Removal of obvious outliers. Here I took quite a conservative approach, strictly removing what seemed absolutely necessary (2 non-person entries), as I did not want to remove potentially useful information.
+* At least considering data normalization, even if I eventually used a type of classifier which makes this unnecessary (Decision Tree).
 * Addition of a new, synthetic feature, *poi_mail_ratio*, which represents the share of emails sent from POI to this person.
 * Testing of several classifiers (Gaussian Naive Bayes, Decision Tree, ...) and parameters
 
